@@ -1,4 +1,7 @@
 server/data/
+server/eng.traineddata
+server/vie.traineddata
+server/jpn.traineddata
 
 # Logs
 logs
