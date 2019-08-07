@@ -1,0 +1,21 @@
+{
+  "name": "Client",
+  "homepage": "https://github.com/phamduyhk/pdf-converter",
+  "authors": [
+    "pham duy <phamduyhk@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "angularjs#^1.7.8",
+    "angular-ui-router": "^1.0.22"
+  }
+}

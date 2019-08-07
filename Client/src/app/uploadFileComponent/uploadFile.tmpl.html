@@ -1,0 +1,12 @@
+<div>
+     <input type="file"
+     files="$ctrl.files"
+     accept=".pdf"
+     multiple />
+     <br/>
+    <br>
+    <u>
+        <li ng-repeat="file in $ctrl.files">{{ file.name }}</li>
+    </ul>
+    <md-button ng-click="$ctrl.uploadFile()">upload</md-button>
+</div>
