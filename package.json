@@ -17,6 +17,19 @@
   },
   "homepage": "https://github.com/phamduyhk/pdf-converter#readme",
   "dependencies": {
+    "angular-file-upload": "^2.5.0",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "path": "^0.12.7",
     "tesseract.js": "^2.0.0-alpha.13"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-filter": "^6.0.0",
+    "gulp-less": "^4.0.1",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.2",
+    "main-bower-files": "^2.13.1"
   }
 }

@@ -1,7 +1,6 @@
 (function () {
     'use strict';
-    angular.module('myApp', ["ui.router", "ngMaterial"
-        ])
+    angular.module('myApp', ["ui.router", "ngMaterial", "ngFileUpload"])
         .config(config)
         .run(run);
 
@@ -14,7 +13,7 @@
 
     run.$inject = ['$http', '$rootScope', '$window'];
 
-    function run($http, $rootScope,$window) {
-         console.log("app module started!");
+    function run($http, $rootScope, $window) {
+        console.log("app module started!");
     }
 })();

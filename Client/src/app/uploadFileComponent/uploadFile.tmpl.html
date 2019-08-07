@@ -1,12 +1,10 @@
-<div>
-     <input type="file"
-     files="$ctrl.files"
-     accept=".pdf"
-     multiple />
-     <br/>
+<form>
+    <input type="file" ngf-select ng-model="$ctrl.file" name="file" ngf-pattern="'.pdf'" accept=".pdf"
+        ngf-max-size="20MB" />
     <br>
     <u>
         <li ng-repeat="file in $ctrl.files">{{ file.name }}</li>
-    </ul>
-    <md-button ng-click="$ctrl.uploadFile()">upload</md-button>
-</div>
+        </ul>
+        <md-button type="submit" class="md-raised md-primary" ng-click="$ctrl.submit()">upload</md-button>
+        <p>{{$ctrl.progress}}</p>
+</form>
