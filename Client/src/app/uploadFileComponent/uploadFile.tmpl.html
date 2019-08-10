@@ -1,10 +1,25 @@
 <form>
-    <input type="file" ngf-select ng-model="$ctrl.file" name="file" ngf-pattern="'.pdf'" accept=".pdf"
-        ngf-max-size="20MB" />
+    <input type="file" ngf-select ng-model="$ctrl.file" name="file" ngf-pattern="image"
+        accept="image/x-png,image/jpg,image/jpeg" ngf-max-size="20MB" />
     <br>
-    <u>
-        <li ng-repeat="file in $ctrl.files">{{ file.name }}</li>
-        </ul>
-        <md-button type="submit" class="md-raised md-primary" ng-click="$ctrl.submit()">upload</md-button>
-        <p>{{$ctrl.progress}}</p>
+    <md-input-container>
+        <label>Language</label>
+        <md-select ng-model="$ctrl.lang">
+            <md-option ng-repeat="lang in $ctrl.langs" ng-value="lang">
+                {{lang}}
+            </md-option>
+        </md-select>
+    </md-input-container>
+    <md-card-actions layout="row" layout-align="start center">
+        <md-button type="submit" class="md-raised md-primary" ng-click="$ctrl.submit()">upload&OCR</md-button>
+    </md-card-actions>
+    <p>{{$ctrl.progress}}</p>
+    <div layout="row" layout-sm="column" layout-align="space-around">
+        <md-progress-circular md-mode="indeterminate" ng-if="$ctrl.progressCircular"></md-progress-circular>
+    </div>
+    <div ng-if="$ctrl.ocrResult"> OCR RESULT
+        <md-content flex layout-padding>
+            <p>{{$ctrl.ocrResult}}</p>
+        </md-content>
+    </div>
 </form>

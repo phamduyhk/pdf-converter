@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var sourcemaps = require('gulp-sourcemaps');
+var rename = require('gulp-rename');
 
 var mainBowerFiles = require('main-bower-files');
 var filter = require('gulp-filter');
@@ -22,7 +23,10 @@ gulp.task('app', function () {
         .pipe(uglify().on('error', function (e) {
             console.log(e);
         }))
-        .pipe(sourcemaps.write())
+        .pipe(rename({
+            extname: '.min.js'
+        }))
+        // .pipe(sourcemaps.write())
         .pipe(gulp.dest('./Client/build'));
 });
 
@@ -35,6 +39,9 @@ gulp.task('vendor', function () {
         .pipe(uglify()).on('error', function (e) {
             console.log(e);
         })
-        .pipe(sourcemaps.write())
+        .pipe(rename({
+            extname: '.min.js'
+        }))
+        // .pipe(sourcemaps.write())
         .pipe(gulp.dest('./Client/build'));
 });
