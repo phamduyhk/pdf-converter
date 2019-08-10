@@ -17,6 +17,6 @@ app.use(bodyParser.urlencoded({
 
 app.use('/', express.static('../Client'));
 
-// app.use('/api', router);
+app.use('/api', router);
 server.listen(PORT);
 console.log('The magic happens on port ' + PORT);

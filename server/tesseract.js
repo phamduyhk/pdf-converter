@@ -24,10 +24,9 @@ var recognize = function(filename, lang){
                 });
         });
 }
-var filename = "./tesseract-data/test.png";
-var lang = "vie";
+var filename = "./public/pdf/1565422041470.png";
+var filename = "./public/pdf/1565422923971S__115441671.jpg";
+var lang = "jpn";
 recognize(filename,lang);
 
-module.exports = function(){
-
-}
+module.exports = recognize;
