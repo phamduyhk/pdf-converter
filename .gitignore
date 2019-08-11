@@ -6,6 +6,7 @@ server/jpn.traineddata
 server/public/pdf/*
 Client/build/*
 Client/public/*
+server/key.json
 # Logs
 logs
 *.log
