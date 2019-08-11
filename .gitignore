@@ -4,6 +4,8 @@ server/vie.traineddata
 server/jpn.traineddata
 
 server/public/pdf/*
+
+Client/public/*
 # Logs
 logs
 *.log
