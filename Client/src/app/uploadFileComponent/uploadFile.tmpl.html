@@ -1,5 +1,6 @@
 <form>
-    <input type="file" ngf-select ng-model="$ctrl.file" name="file" ngf-pattern="image" accept="image/*,application/pdf" ngf-max-size="20MB" />
+    <input type="file" ngf-select ng-model="$ctrl.file" name="file" ngf-pattern="image" accept="image/*,application/pdf"
+        ngf-max-size="20MB" />
     <br>
     <md-input-container>
         <label>Language</label>
@@ -9,19 +10,32 @@
             </md-option>
         </md-select>
     </md-input-container>
-    <audio src="./../../test1.mp3" controls></audio>
-    <audio src="./../../public/voice/1565448213497_id1565448130778.mp3" controls></audio>
+
     <md-card-actions layout="row" layout-align="start center">
         <md-button type="submit" class="md-raised md-primary" ng-click="$ctrl.submit()">upload</md-button>
     </md-card-actions>
-    <md-card-actions layout="row" layout-align="center center" ng-if="$ctrl.ocrResult">
-        <md-button type="submit" class="md-raised md-primary" ng-click="$ctrl.getVoice('helloworld')">getVoice</md-button>
-        <audio src={{$ctrl.voiceSrc}} controls class="link" loop></audio>
-    </md-card-actions>
-    <p>{{$ctrl.progress}}</p>
     <div layout="row" layout-sm="column" layout-align="space-around">
         <md-progress-circular md-mode="indeterminate" ng-if="$ctrl.progressCircular"></md-progress-circular>
     </div>
+    <p>{{$ctrl.progress}}</p>
+
+    <div ng-if="$ctrl.getTextField">
+        <md-input-container>
+            <label>page</label>
+            <input type="number" step="1" name="$ctrl.page" ng-model="$ctrl.page" min="0" max="10000" required />
+            </md-select>
+        </md-input-container>
+        <div>
+            <md-button type="submit" class="md-raised md-primary" ng-click="$ctrl.getText($ctrl.page)" ng-required="true">get Text</md-button>
+        </div>
+
+    </div>
+
+    <!-- <md-card-actions layout="row" layout-align="start center" ng-if="$ctrl.ocrResult">
+        <md-button type="submit" class="md-raised md-primary" ng-click="$ctrl.getVoice($ctrl.ocrResult)">getVoice</md-button>
+        <audio src="{{$ctrl.voiceSrc}}" controls class="link" loop></audio> -->
+
+    </md-card-actions>
     <div ng-if="$ctrl.ocrResult"> RESULT
         <md-content flex layout-padding>
             <p>{{$ctrl.ocrResult}}</p>

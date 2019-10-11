@@ -26,7 +26,6 @@
     "multer": "^1.4.2",
     "path": "^0.12.7",
     "pdf-image": "^2.0.0",
-    "pdf-parse": "^1.1.1",
     "pdf2json": "^1.1.8",
     "tesseract.js": "^2.0.0-alpha.13"
   },
