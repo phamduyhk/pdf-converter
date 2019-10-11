@@ -9,7 +9,7 @@ const folder = './../Client/public/pdf/';
 const fs = require('fs');
 const Tesseract = require('tesseract.js');
 const PDFParser = require("pdf2json");
-const pdf = require('pdf-parse');
+const pdf = require('./pdf-parse/lib/pdf-parse');
 var PDFImage = require("pdf-image").PDFImage;
 //GET LIST OF FILES //
 function getFiles(dir) {
@@ -147,9 +147,15 @@ router.get('/pdf2text', function(req, res) {
     try {
         var lang = req.query.lang;
         var filename = req.query.url;
-        console.log("pdf2text " + filename + " in language " + lang);
+        var startpage = parseInt(req.query.startpage, 10);
+        console.log("pdf2text " + filename + " in language " + lang + ", startpage: " + startpage);
         let dataBuffer = fs.readFileSync(filename);
-        pdf(dataBuffer).then(function(data) {
+        let options = {
+            startpage: startpage,
+            // max page number to parse
+            max: 1
+        }        
+        pdf(dataBuffer, options).then(function(data) {
             // console.log({ data: data });
             res.send(data.text);
         })
